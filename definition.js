@@ -298,10 +298,10 @@ Blockly.Blocks['xbot_blynk_run'] = {
 // Any imports need to be reserved words
 Blockly.Python.addReservedWords('blynklib_mp');
 Blockly.Python.addReservedWords('network');
-Blockly.Python.addReservedWords('time');
 
 Blockly.Python['xbot_blynk_connect'] = function(block) {
   Blockly.Python.definitions_['import_blynklib_mp'] = 'from blynklib_mp import *';
+  Blockly.Python.definitions_['import_network'] = 'from network import *';
   var value_wifi = Blockly.Python.valueToCode(block, 'wifi', Blockly.Python.ORDER_ATOMIC);
   var value_password = Blockly.Python.valueToCode(block, 'password', Blockly.Python.ORDER_ATOMIC);
   var value_auth_key = Blockly.Python.valueToCode(block, 'auth_key', Blockly.Python.ORDER_ATOMIC);
