@@ -23,7 +23,7 @@ Blockly.Blocks['xbot_blynk_connect'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": "#00A06B",
+      "colour": "#CC6600",
       "tooltip":
         Blockly.Msg.XBOT_BLYNK_CONNECT_TOOLTIP,
       "helpUrl": 
@@ -123,7 +123,7 @@ Blockly.Blocks['xbot_blynk_app_pin_write'] = {
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": '#00A06B',
+    "colour": '#CC6600',
     "tooltip": Blockly.Msg.XBOT_BLYNK_APP_PIN_WRITE_TOOLTIP,
     "helpUrl": Blockly.Msg.XBOT_BLYNK_APP_PIN_WRITE_HELPURL
     });
@@ -220,7 +220,7 @@ Blockly.Blocks['xbot_blynk_update_pin'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": '#00A06B',
+      "colour": '#CC6600',
       "tooltip": Blockly.Msg.XBOT_BLYNK_UPDATE_PIN_TOOLTIP,
       "helpUrl": Blockly.Msg.XBOT_BLYNK_UPDATE_PIN_HELPURL
     });
@@ -243,7 +243,7 @@ Blockly.Blocks['xbot_blynk_notify'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": '#00A06B',
+      "colour": '#CC6600',
       "tooltip": Blockly.Msg.XBOT_BLYNK_NOTIFY_TOOLTIP,
       "helpUrl": Blockly.Msg.XBOT_BLYNK_NOTIFY_HELPURL
     });
@@ -274,7 +274,7 @@ Blockly.Blocks['xbot_blynk_email'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": '#00A06B',
+      "colour": '#CC6600',
       "tooltip": Blockly.Msg.XBOT_BLYNK_EMAIL_TOOLTIP,
       "helpUrl": Blockly.Msg.XBOT_BLYNK_EMAIL_HELPURL
     });
@@ -288,7 +288,7 @@ Blockly.Blocks['xbot_blynk_run'] = {
       "message0": Blockly.Msg.XBOT_BLYNK_RUN_MESSAGE0,
       "previousStatement": null,
       "nextStatement": null,
-      "colour": '#00A06B',
+      "colour": '#CC6600',
       "tooltip": Blockly.Msg.XBOT_BLYNK_RUN_TOOLTIP,
       "helpUrl": Blockly.Msg.XBOT_BLYNK_RUN_HELPURL
     });

@@ -1,5 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category id="ble" name="BLYNK" colour="#00A06B" icon="mobile alternate">
+  <category id="ble" name="BLYNK" colour="#CC6600" icon="mobile alternate">
 	  <block type="xbot_blynk_connect">
       <value name="wifi">
           <shadow type="text"><field name="TEXT">wifi</field></shadow>
