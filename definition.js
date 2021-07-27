@@ -1,7 +1,7 @@
 Blockly.Blocks['xbot_blynk_connect'] = {
   init: function() {
     this.jsonInit({
-    "type": "yolobit_blynk_connect",
+    "type": "xbot_blynk_connect",
     "message0": 
     Blockly.Msg.XBOT_BLYNK_CONNECT_MESSAGE0,
       "args0": [
@@ -35,7 +35,7 @@ Blockly.Blocks['xbot_blynk_connect'] = {
 Blockly.Blocks['xbot_blynk_app_pin_write'] = {
   init: function() {
     this.jsonInit({
-    "type": "yolobit_blynk_app_pin_write",
+    "type": "xbot_blynk_app_pin_write",
     "message0": Blockly.Msg.XBOT_BLYNK_APP_PIN_WRITE_MESSAGE0,
     "args0": [
       {
@@ -133,7 +133,7 @@ Blockly.Blocks['xbot_blynk_app_pin_write'] = {
 Blockly.Blocks['xbot_blynk_update_pin'] = {
   init: function() {
     this.jsonInit({
-      "type": "yolobit_blynk_update_pin",
+      "type": "xbot_blynk_update_pin",
       "message0": Blockly.Msg.XBOT_BLYNK_UPDATE_PIN_MESSAGE0,
       "args0": [
         {
@@ -230,7 +230,7 @@ Blockly.Blocks['xbot_blynk_update_pin'] = {
 Blockly.Blocks['xbot_blynk_notify'] = {
   init: function() {
     this.jsonInit({
-      "type": "yolobit_blynk_notify",
+      "type": "xbot_blynk_notify",
       "message0": Blockly.Msg.XBOT_BLYNK_NOTIFY_MESSAGE0,
       "args0": [
         {
@@ -253,7 +253,7 @@ Blockly.Blocks['xbot_blynk_notify'] = {
 Blockly.Blocks['xbot_blynk_email'] = {
   init: function() {
     this.jsonInit({
-      "type": "yolobit_blynk_email",
+      "type": "xbot_blynk_email",
       "message0": Blockly.Msg.XBOT_BLYNK_EMAIL_MESSAGE0,
       "args0": [
         {
@@ -284,7 +284,7 @@ Blockly.Blocks['xbot_blynk_email'] = {
 Blockly.Blocks['xbot_blynk_run'] = {
   init: function() {
     this.jsonInit({
-      "type": "yolobit_blynk_run",
+      "type": "xbot_blynk_run",
       "message0": Blockly.Msg.XBOT_BLYNK_RUN_MESSAGE0,
       "previousStatement": null,
       "nextStatement": null,
@@ -300,13 +300,13 @@ Blockly.Python.addReservedWords('blynklib_mp');
 Blockly.Python.addReservedWords('network');
 
 Blockly.Python['xbot_blynk_connect'] = function(block) {
-  Blockly.Python.definitions_['import_blynklib_mp'] = 'from blynklib_mp import *';
+  Blockly.Python.definitions_['import_blynklib_mp'] = 'import blynklib_mp';
   Blockly.Python.definitions_['import_network'] = 'from network import *';
   var value_wifi = Blockly.Python.valueToCode(block, 'wifi', Blockly.Python.ORDER_ATOMIC);
   var value_password = Blockly.Python.valueToCode(block, 'password', Blockly.Python.ORDER_ATOMIC);
   var value_auth_key = Blockly.Python.valueToCode(block, 'auth_key', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  Blockly.Python.definitions_['import_connect'] = 'blynk = connect('+ value_wifi + ' , ' + value_password +', ' + value_auth_key + ')';
+  Blockly.Python.definitions_['import_connect'] = 'blynk = blynklib_mp.connect('+ value_wifi + ' , ' + value_password +', ' + value_auth_key + ')';
   return '';
 };
 
