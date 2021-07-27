@@ -10,6 +10,7 @@ import utime as time
 import ustruct as struct
 import uselect as select
 from micropython import const
+from utility import *
 
 ticks_ms = time.ticks_ms
 sleep_ms = time.sleep_ms
@@ -373,14 +374,32 @@ class Blynk(Connection):
                 self.log(g_exc)
 
 def connect(ssid, password, auth_key, server='blynk-cloud.com', port=80):
+    say('Connecting to WiFi...')
     station = network.WLAN(network.STA_IF)
-    station.active(True)
-    station.connect(ssid, password)
+    if station.active():
+        station.active(False)
+        time.sleep_ms(500)
 
+    for i in range(5):
+        try:
+            station.active(True)
+            station.connect(ssid, password)
+            break
+        except OSError:
+            station.active(False)
+            time.sleep_ms(500)
+            if i == 4:
+                say('Failed to connect to WiFi')
+                raise Exception('Failed to connect to WiFi')
+
+    count = 0
     while station.isconnected() == False:
-        time.sleep_ms(10)
+        count = count + 1
+        if count > 150:
+            say('Failed to connect to WiFi')
+            raise Exception('Failed to connect to WiFi')
+        time.sleep_ms(100)
 
-    print('Connected to Wifi')
-    print('IP address: ')
-    print(station.ifconfig())
+    say('Wifi connected. IP:' + station.ifconfig()[0])
+
     return Blynk(auth_key, server=server, port=port)
